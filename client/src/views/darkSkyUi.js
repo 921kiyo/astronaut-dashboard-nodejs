@@ -1,7 +1,7 @@
 var self;
 var DarkSkyUi = function(){
   self = this;
-}
+};
 
 DarkSkyUi.prototype = {
   makeWeatherImage: function(url){
@@ -20,7 +20,7 @@ DarkSkyUi.prototype = {
   checkTime: function(time){
     var timeInt = parseInt(time);
     var i;
-    var timeString = timeInt.toString()
+    var timeString = timeInt.toString();
       if(timeInt < 10){
         i = ("0"+timeString);
       } else {
@@ -51,7 +51,7 @@ DarkSkyUi.prototype = {
     var sunset = self.makePtag("sunsetTime", "Sunset: " + self.checkTime(dateSunset.getDate()) + "/"+ self.checkTime((dateSunset.getMonth()+1))+ "/"+dateSunset.getFullYear()+" "+self.checkTime(dateSunset.getHours())+":"+self.checkTime(dateSunset.getMinutes()));
 
     var sun = self.makeWeatherImage("http://localhost:3000/public/Sunimg.jpg");
-    var moon = self.makeWeatherImage("http://localhost:3000/public/weemoonimg.jpg")    
+    var moon = self.makeWeatherImage("http://localhost:3000/public/weemoonimg.jpg");    
 
     self.appendToContainer(container, currentTemp);
     self.appendToContainer(container, weatherSummary);
@@ -59,9 +59,7 @@ DarkSkyUi.prototype = {
     self.appendToContainer(container2, sunrise);
     self.appendToContainer(container2, moon);
     self.appendToContainer(container2, sunset);
-  
   }
-
 }
 
 module.exports = DarkSkyUi;

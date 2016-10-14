@@ -21,6 +21,6 @@ var FaveNewsApi = function(app) {
     console.log(req.body);
     query.delete(req.body);
   });
-}
+};
 
 module.exports = FaveNewsApi;

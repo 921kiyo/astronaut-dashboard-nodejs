@@ -1,7 +1,7 @@
 var self;
 var ITunesUi = function(){
   self = this;
-}
+};
 
 ITunesUi.prototype = {
 
@@ -28,15 +28,13 @@ ITunesUi.prototype = {
       if (parsedJson.feed.entry === undefined){
         var iTunesDiv = document.getElementById("iTunes-music");
         iTunesDiv.style.display = "none";
-        return
+        return;
       }
       for (var i = 0; i < parsedJson.feed.entry.length; i++){
-        // Getting elements form json 
-        
+        // Getting elements form json   
         var songName = parsedJson.feed.entry[i]['im:artist'].label;
         var artist = parsedJson.feed.entry[i]['im:collection']['im:name'].label;
         var image = parsedJson.feed.entry[i]['im:image'][2].label;
-        // var artist = parsedJson.feed.entry[i].link[1].attributes.href;
         
         // Creating tags and passing text 
         var div = document.createElement('div');
@@ -66,9 +64,7 @@ ITunesUi.prototype = {
         self.appendToContainer(ul, li);
       }
       self.appendToContainer(container, ul);
-
     }
-
-}
+};
 
 module.exports = ITunesUi;

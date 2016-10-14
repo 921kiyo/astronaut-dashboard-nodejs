@@ -34,18 +34,14 @@ var handleSetHomeButton = function(){
   var iTunesUi = new ITunesUi();
   var nYTui = new NYTui();
   
-  
-  // var array = map.geocodeLatLng();
   var country = localStorage.getItem("country");
-  console.log(country);
   var welcomeDiv = document.getElementById("select_home_page");
   welcomeDiv.style.display = "none";
 
-  var nytrequest = localStorage.getItem("region and country")
+  var nytrequest = localStorage.getItem("region and country");
 
   nytApi.makeRequest(country, nYTui.makeArticle);
   flickrApi.makeRequest(country, flickrUi.makeFlickrUrl);
-  // iTunesApi.makeRequest();
   darkSky.makeRequest(latlng, Clock, darkSkyUi.makeWeatherDisplay);
 
   countryApi.makeRequest(country, iTunesApi, iTunesUi.makeITunesUrl);
@@ -65,11 +61,11 @@ var handleSubmitButton = function(event){
       date: date,
       title: title 
     }
-  }
-  diaryInput = JSON.stringify(diaryInput)
+  };
+  diaryInput = JSON.stringify(diaryInput);
 
 
-  ajax.makePostRequest('/api/diary', diaryInput )
+  ajax.makePostRequest('/api/diary', diaryInput);
 };
 
 var setElementStyle = function(element, displayStyle){
@@ -98,7 +94,7 @@ var handleMapButtonClick = function(){
     var header = document.querySelector('#header');
     header.innerHTML = "News From Home";
     handleSetHomeButton();
-  }
+  };
 };
 
 var setDate = function(){
@@ -107,12 +103,12 @@ var setDate = function(){
   var mm = today.getMonth()+1; //January is 0
   var yyyy = today.getFullYear();
   if(dd<10){
-      dd='0'+dd
+      dd='0'+dd;
   } 
   if(mm<10){
-      mm='0'+mm
+      mm='0'+mm;
   } 
-  var today = yyyy+'-'+mm+'-'+dd;
+  today = yyyy+'-'+mm+'-'+dd;
   return today;
 };
 
@@ -136,8 +132,7 @@ var handleDiaryEntryButtonClick = function(){
       
     new DiaryUI();
     location.reload();
-    }
-    
+    };   
 };
 
 var handleDiaryButtonClick = function(){
@@ -165,7 +160,7 @@ var handleIssButtonClick = function(){
     map.createMarker();
     map.addFancyMarker();
     map.addClickEvent();
-  }
+  };
 
 
 var app = function(){
@@ -187,14 +182,12 @@ var app = function(){
   var issLocationButton = document.querySelector('#iss_page_entry');
   issLocationButton.onclick = handleIssButtonClick;
 
-  var homePageButtons = document.querySelectorAll('.homepage')
+  var homePageButtons = document.querySelectorAll('.homepage');
     for (var homePageButton of homePageButtons){
-  homePageButton.onclick = function(){
-    location.reload();
+    homePageButton.onclick = function(){
+      location.reload();
+    };
   }
-  }
- 
-
-  }
+};
 
 window.onload = app;

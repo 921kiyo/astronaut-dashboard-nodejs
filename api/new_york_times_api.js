@@ -6,7 +6,7 @@ var faveNews = new FaveNews();
 
 var NYTApi = function(){
    
-}
+};
 
 NYTApi.prototype = {
   makeRequest: function(keyword, callback){
@@ -16,18 +16,15 @@ NYTApi.prototype = {
     request.open("GET", url);
     request.onload = function(){
       if(this.status !== 200) {
-         return 
+         return;
        }
        json = this.responseText;
        var parsedJson = JSON.parse(json);
        callback(parsedJson);
-    }
+    };
     request.send();
 
   }
   
-}
-
-
-
+};
 module.exports = NYTApi;

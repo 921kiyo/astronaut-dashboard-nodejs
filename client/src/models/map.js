@@ -15,11 +15,11 @@ var Map =  function( container, centre, zoom ){
       map: this.googleMap,
       position: this.googleMap.center,
       animation: google.maps.Animation.DROP
-    })
+    });
   };
   // This is for ISS marker
   this.addFancyMarker = function(image){
-    marker.setIcon("http://localhost:3000/public/ISS-white.jpg")
+    marker.setIcon("http://localhost:3000/public/ISS-white.jpg");
   };
 
 
@@ -29,12 +29,12 @@ var Map =  function( container, centre, zoom ){
       var newCoords = {
         lat: event.latLng.lat(),
         lng: event.latLng.lng()
-      }
+      };
       marker.setPosition(newCoords);
 
-      self.geocodeLatLng()
+      self.geocodeLatLng();
 
-    })
+    });
   };
 
 
@@ -48,7 +48,7 @@ var Map =  function( container, centre, zoom ){
 
   // This is for ISS Location
   this.updateWindow = function(content){
-    console.log("update window called")
+    console.log("update window called");
     info_window.setContent(content);
   };
 
@@ -61,7 +61,7 @@ var Map =  function( container, centre, zoom ){
       this.addMarker(position);
       var issPassOverApi = new IssPassOverApi();
       var issPassOver = issPassOverApi.makeRequest(position, self);
-    }.bind(this))
+    }.bind(this));
   };
 
   
@@ -74,24 +74,19 @@ var Map =  function( container, centre, zoom ){
   // Get country name based on latitute and longitute
   this.geocodeLatLng = function(){
     
-    var geocoder = new google.maps.Geocoder;
+    var geocoder = new google.maps.Geocoder();
 
     geocoder.geocode({"location": marker.position}, function( results, status ){
       console.log(results);
       localStorage.setItem("country", results[results.length -1 ].formatted_address);
       localStorage.setItem("region and country", results[results.length -2 ].formatted_address);
       console.log(localStorage.getItem("country"));
-
-    })
+    });
   };
 
   this.setMarker = function(coords){
     marker.setPosition(coords);
-  }
-
-
-
-
-}
+  };
+};
 
 module.exports = Map;

@@ -17,6 +17,6 @@ var DiaryApi = function(app) {
     console.log(req.body);
     query.delete(req.body);
   });
-}
+};
 
 module.exports = DiaryApi;

@@ -1,4 +1,4 @@
-var IssLocationApi = function(){} 
+var IssLocationApi = function(){};
 
 IssLocationApi.prototype = {
   makeRequest: function(map){
@@ -14,13 +14,12 @@ IssLocationApi.prototype = {
       var newCoords = {
         lat:parsedJson.iss_position.latitude,
         lng:parsedJson.iss_position.longitude
-      } 
+      };
       map.setMarker(newCoords);
 
-    }
+    };
     request.send();
   }
-}
+};
 
 module.exports = IssLocationApi;
-

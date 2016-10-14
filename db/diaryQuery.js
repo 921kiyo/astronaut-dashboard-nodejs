@@ -2,7 +2,7 @@ var MongoClient = require('mongodb').MongoClient;
 
 var DiaryQuery = function(){
   this.url = 'mongodb://localhost:27017/beam_us_up';
-}
+};
 
 DiaryQuery.prototype = {
   all: function(onQueryFinished){
@@ -20,8 +20,8 @@ DiaryQuery.prototype = {
       collection.insert([
       diaryInput
       ]
-    )
-  })
+    );
+  });
   },
 
   delete: function(title){
@@ -30,10 +30,8 @@ DiaryQuery.prototype = {
       console.log(collection);
       // console.log("delete mongo db request ",diaryId);
       collection.remove(title);
-    })
+    });
   }
-
-
-}
+};
 
 module.exports = DiaryQuery;

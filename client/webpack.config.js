@@ -5,6 +5,6 @@ config = {
     path: "./build"
   },
   // devtool: 'source-map'
-}
+};
 
 module.exports = config;

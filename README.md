@@ -1,6 +1,7 @@
 #Astronaut's Dashboard
 
 An astronaut is going to the International Space Station and has requested that you build a browser based dashboard for them to use on board the ISS. They want to keep up to date with what's going on in their home city to stop them from getting too homesick. They also want to be able to write a diary to send back home...
+![Alt text](client/build/public/project_image.png?raw=true "Optional Title")
 
 This is our Week 12 Group Project, a 7-day hackathon at [CodeClan](https://codeclan.com/) where we introduced the use of APIs and MongoDB by creating a sinble-page web application with JS. 
 

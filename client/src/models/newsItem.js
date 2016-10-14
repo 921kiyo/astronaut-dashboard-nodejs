@@ -4,6 +4,6 @@ var NewsItem = function(options){
   this.title = options.title;
   this.date = options.date;
   this.summary = options.summary;
-}
+};
 
 module.exports = NewsItem;

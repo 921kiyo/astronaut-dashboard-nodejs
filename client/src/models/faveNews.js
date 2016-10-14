@@ -1,7 +1,7 @@
 var NewsItem = require('./newsItem');
 var Ajax = require('./ajax');
 
-var FaveNews = function(){}
+var FaveNews = function(){};
 
 FaveNews.prototype = {
   all: function(callback){
@@ -17,7 +17,7 @@ FaveNews.prototype = {
     });
   },
   populateFaveNews: function(results){
-    var faveNews = []
+    var faveNews = [];
 
     for (var result of results){
       
@@ -30,7 +30,7 @@ FaveNews.prototype = {
 
   addNewsItem: function(item){
     var ajax = new Ajax();
-    console.log("Item" + item.title)
+    console.log("Item" + item.title);
     ajax.makePostRequest("http://localhost:3000/api/favenews", item);
   },
 
@@ -38,6 +38,6 @@ FaveNews.prototype = {
     var ajax = new Ajax();
     ajax.makeDeleteRequest("http://localhost:3000/api/favenews", title);
   }
-}
+};
 
 module.exports = FaveNews;

@@ -2,7 +2,6 @@ use beam_us_up;
 
 db.dropDatabase();
 
-
 db.diary.insert([
   { 
     title: "Moon picnic",
@@ -21,7 +20,4 @@ db.diary.insert([
     date: "03.09.16",
     text: "Had a nap. Watched some Netflix."
   }
-
 ]);
-
-

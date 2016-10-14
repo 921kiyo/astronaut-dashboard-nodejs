@@ -1,6 +1,6 @@
 var CountryApi = function(country){
 
-}
+};
 
 CountryApi.prototype = {
   makeRequest: function(country, iTunesApi, iTunesUi) {
@@ -15,7 +15,7 @@ CountryApi.prototype = {
       json = this.responseText;
       var parsedJson = JSON.parse(json);
       self.makeCountryCode(parsedJson, iTunesApi, iTunesUi);
-    }
+    };
     request.send();
   },
   // callback for iTunes API
@@ -24,6 +24,6 @@ CountryApi.prototype = {
     iTunesApi.makeRequest(countryCode, iTunesUi);
   }
 
-}
+};
 
 module.exports = CountryApi;

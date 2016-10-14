@@ -2,23 +2,22 @@ var self;
 
 var Clock = function(){
   self = this;
-}
+};
 
 Clock.prototype = {
   checkTime: function(time){
     var timeInt = parseInt(time);
     var i;
-    var timeString = timeInt.toString()
+    var timeString = timeInt.toString();
       if(timeInt < 10){
         i = ("0"+timeString);
       } else {
         i = timeString;
       }
     return i;
-
   },
   startClock: function(){
-    var time = new Date;
+    var time = new Date();
     var offset = localStorage.getItem("offset");
     
     var hours = document.getElementById("hours");
@@ -39,9 +38,7 @@ Clock.prototype = {
       seconds.innerText = currentSeconds;
       
     setTimeout(self.startClock, 1000);
-  
   }
-
-}
+};
 
 module.exports = Clock;

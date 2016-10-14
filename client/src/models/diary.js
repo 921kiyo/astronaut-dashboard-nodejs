@@ -1,7 +1,7 @@
 var DiaryEntry = require('./diary_entry');
 var Ajax = require('./ajax');
 
-var Diary = function(){}
+var Diary = function(){};
 
 Diary.prototype = {
   all: function(callback){
@@ -17,7 +17,7 @@ Diary.prototype = {
     });
   },
   populateDiary: function(results){
-    var diary = []
+    var diary = [];
 
     for (var result of results){
       
@@ -32,6 +32,6 @@ Diary.prototype = {
     var ajax = new Ajax();
     ajax.makeDeleteRequest("http://localhost:3000/api/diary", title);
   }
-}
+};
 
 module.exports = Diary;

@@ -1,4 +1,4 @@
-var Ajax= function(){}
+var Ajax= function(){};
 
 Ajax.prototype = {
   makeGetRequest: function(url, callback){
@@ -14,15 +14,10 @@ Ajax.prototype = {
     request.open('POST', url);
     console.log(request);
     request.setRequestHeader('Content-Type', 'application/json');
-    console.log("diaryInput2", diaryInput)
+    console.log("diaryInput2", diaryInput);
     request.onload = function(){
-      // if(Ajax.request = 200){
-      //   console.log("success");
-      // }
       console.log("Make post request on load call back");
     };
-
-    // request.send(JSON.stringify(diaryInput));
     request.send(diaryInput);
   },
 
@@ -30,11 +25,9 @@ Ajax.prototype = {
     var request = new XMLHttpRequest();
     request.open('DELETE', url, true);
     request.setRequestHeader('Content-Type', 'application/json');
-    // var diaryId = {_id: id};
-    // console.log(diaryId);
     request.send(JSON.stringify({"title": title}));
   }
 
-}
+};
 
 module.exports = Ajax;

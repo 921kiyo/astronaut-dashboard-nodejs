@@ -1,5 +1,5 @@
 var ITunesApi = function(countryCode){
-}
+};
 
 ITunesApi.prototype = {
   makeRequest: function(countryCode, callback){
@@ -16,10 +16,10 @@ ITunesApi.prototype = {
       json = this.responseText;
       var parsedJson = JSON.parse(json);
       callback(parsedJson);
-    }
+    };
     request.send();
   }
   
-}
+};
 
 module.exports = ITunesApi;

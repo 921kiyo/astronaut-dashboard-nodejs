@@ -1,8 +1,5 @@
-var Map = require('../client/src/models/map')
+var IssPassOverApi = function(){};
 
-var IssPassOverApi = function(){} 
-
-var myDate;
 var time; 
 
 IssPassOverApi.prototype = {
@@ -37,14 +34,13 @@ IssPassOverApi.prototype = {
       if (hours === ""){
         passOver = minutes + " minutes " + seconds + " seconds";
       }
-      // myDate = new Date(time);
 
       var text = document.createElement('p');
       text.innerText = "Next pass time is in " + passOver;
       map.updateWindow(text);
-    }
+    };
     request.send();
   }
-}
+};
 
 module.exports = IssPassOverApi;

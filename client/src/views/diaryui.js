@@ -5,7 +5,7 @@ var DiaryUI = function() {
   diary.all(function(result) {
     this.render(result);
   }.bind(this));
-}
+};
 
 DiaryUI.prototype = {
   createText: function(text) {
@@ -30,7 +30,7 @@ DiaryUI.prototype = {
 
     for(var result of results) {
       var li = document.createElement("li");
-      li.setAttribute('id','diary-result-li')
+      li.setAttribute('id','diary-result-li');
       var delButton = document.createElement("button");
       delButton.id = "diaryDelButton";
       console.log(result);
@@ -44,6 +44,6 @@ DiaryUI.prototype = {
       container.appendChild(li);
     }
   }
-}
+};
 
 module.exports = DiaryUI;
